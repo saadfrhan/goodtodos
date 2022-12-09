@@ -120,7 +120,7 @@ export function createOperation(args: { todos: Todo[] }) {
     }]);
 
     switch (setting) {
-      case 'UPDATE':
+      case 'UPDATE': {
         const { status }: { status: string } = await inquirer.prompt([{
           name: 'status',
           type: 'input',
@@ -128,8 +128,8 @@ export function createOperation(args: { todos: Todo[] }) {
           default: 'DONE',
           validate: (val) => Boolean(val) || 'Enter correctly.'
         }]);
-
         updateTodoState(todo.id as string, status)
+      }
         break;
 
       case 'DELETE':

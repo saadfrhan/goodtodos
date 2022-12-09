@@ -1,6 +1,5 @@
 import { QuestionCollection } from "inquirer";
-
-const regex = new RegExp('^[A-Z][a-z]*');
+import { Todo } from "./types/index.js";
 
 export const STARTER_QUESTIONS: QuestionCollection = [
   {
@@ -16,7 +15,7 @@ export const STARTER_QUESTIONS: QuestionCollection = [
   }
 ];
 
-export const TODO_CREATION_QUESTIONS: QuestionCollection<any> = [
+export const TODO_CREATION_QUESTIONS: QuestionCollection<Todo> = [
   {
     name: 'title',
     type: 'input',
