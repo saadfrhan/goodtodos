@@ -1,1 +1,7 @@
-# node-inquirer-todo-cli
+# Todo CLI
+
+## Run
+
+```bash
+npx og-todocli
+```
