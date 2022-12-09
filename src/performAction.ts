@@ -4,6 +4,9 @@ import { Responses, Todo } from './types/index.js';
 
 export default function performAction(response: Responses, todos?: Todo[]): Promise<void | Todo[]> | void {
 
+  if (response.option === 'EXIT')
+    return console.log(chalk.green('Cya!'))
+
   const { onCreateTodo, onListTodos } = createOperation({
     todos: todos || []
   })
@@ -14,6 +17,6 @@ export default function performAction(response: Responses, todos?: Todo[]): Prom
     case 'LIST':
       return onListTodos();
     default:
-      return console.log(chalk.green('Cya!'))
+      return;
   }
 }

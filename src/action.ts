@@ -30,7 +30,6 @@ export function createOperation(args: { todos: Todo[] }) {
       ...responses
     });
     console.log(chalk.yellow('Todo created!'));
-    console.log(allTodos)
     return promptStarterQuestions();
   }
 
@@ -91,11 +90,11 @@ export function createOperation(args: { todos: Todo[] }) {
       console.log(wantedTodo?.status && 'Status: ' + wantedTodo.status);
       console.log(wantedTodo?.dueDate && 'Due date: ' + wantedTodo.dueDate);
       console.log(wantedTodo?.description && 'Description: ' + wantedTodo.description);
-      afterClickingTodo(wantedTodo as Todo)
+      return afterClickingTodo(wantedTodo as Todo)
     }
   }
 
-  async function afterClickingTodo(todo: Todo) {
+  async function afterClickingTodo(todo: Todo): Promise<void | Todo[]> {
     const { setting }: { setting: 'UPDATE' | 'DELETE' | 'EXIT' } = await inquirer.prompt([{
       name: 'setting',
       type: 'expand',
@@ -138,10 +137,11 @@ export function createOperation(args: { todos: Todo[] }) {
         break;
 
       default:
-        return promptStarterQuestions();
+        return onListTodos();
+
     }
 
-    return promptStarterQuestions();
+    return onListTodos();
   }
 
   async function promptStarterQuestions() {
