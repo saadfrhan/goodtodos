@@ -8,7 +8,7 @@ import * as constants from './constants/index.js';
 
 export function createOperation(args: { todos: Todo[] }) {
 
-  let {
+  const {
     createTodo,
     deleteTodo,
     findTodosByTag,
@@ -19,7 +19,7 @@ export function createOperation(args: { todos: Todo[] }) {
     todos: args.todos
   });
 
-  let allTodos = getTodos();
+  const allTodos = getTodos();
 
 
   async function onCreateTodo() {

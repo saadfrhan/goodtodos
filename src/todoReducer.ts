@@ -3,7 +3,7 @@ import * as constants from './constants/index.js';
 
 export default function initializeTodoReducer(args: { todos: Todo[] }) {
 
-  let state = args;
+  const state = args;
 
   function todoById(id: string) {
     return state.todos.find(todo => todo.id === id);
@@ -25,7 +25,7 @@ export default function initializeTodoReducer(args: { todos: Todo[] }) {
   }
 
   function updateTodoState(id: string, status: string) {
-    let found = todoById(id as string)
+    const found = todoById(id as string)
 
     state.todos = [
       ...state.todos.filter(i => i.id === id),
