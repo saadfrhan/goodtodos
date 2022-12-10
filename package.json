@@ -1,6 +1,6 @@
 {
   "name": "goodtodos",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Todo CLI with Node.js, TypeScript, and Inquirer.",
   "homepage": "https://github.com/SaadFarhanIdress/node-inquirer-todo-cli#readme",
   "type": "module",
@@ -13,7 +13,7 @@
     "start": "tsc && node dist/index",
     "build": "tsc"
   },
-  "bin": "./dist/index.js",
+  "bin": "./dist",
   "dependencies": {
     "chalk": "^5.1.2",
     "chalk-animation": "^2.0.3",
