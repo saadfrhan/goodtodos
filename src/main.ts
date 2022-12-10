@@ -17,6 +17,9 @@ export default function main() {
   async function starterQuestion(sQ: () => Promise<void> = starterQuestion) {
     const responses = await inquirer.prompt(STARTER_QUESTION);
     switch (responses.option) {
+      case 'EXIT':
+        console.log(chalk.green('Cya!'));
+        break;
       case 'CREATE':
         await onCreateTodo();
         await sQ();
@@ -79,7 +82,7 @@ export default function main() {
       return await onCreateTodo();
     } else {
       const wantedTodo = todoById(todo.split(' ')[0]);
-      console.log(chalk.whiteBright(wantedTodo?.title))
+      console.log(chalk.whiteBright(wantedTodo?.title as string))
       console.log(wantedTodo?.tags && 'Tags: ' + wantedTodo.tags.join(', '))
       console.log(wantedTodo?.status && 'Status: ' + wantedTodo.status);
       console.log(wantedTodo?.dueDate && 'Due date: ' + wantedTodo.dueDate);

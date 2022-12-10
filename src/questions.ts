@@ -2,7 +2,7 @@ import inquirer, { QuestionCollection } from "inquirer";
 import { Todo } from "./types/index.js";
 import * as constants from './constants/index.js';
 
-export const STARTER_QUESTION: QuestionCollection<{ option: string }> = [
+export const STARTER_QUESTION: QuestionCollection<{ option: 'CREATE' | 'EXIT' | 'LIST' }> = [
   {
     name: 'option',
     type: 'list',
