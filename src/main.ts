@@ -1,22 +1,18 @@
 import chalk from 'chalk';
 import inquirer, { Answers } from 'inquirer';
 import { TagQuestion, STARTER_QUESTION, STATUS_MUTATION_QUESTION, TODO_CREATION_QUESTIONS, TODO_EVENT_QUESTIONS, LIST_TODOS_QUESTION, ListTodosQuestion } from './questions.js';
-import initializeTodoReducer from './todoReducer.js';
+import {
+  updateTodoState,
+  findTodosByTag,
+  createTodo,
+  deleteTodo,
+  todoById,
+  getTodos
+} from './todos.js';
 import { Todo } from './types/index.js';
 import * as constants from './constants/index.js';
 
-export function main() {
-
-  const {
-    createTodo,
-    deleteTodo,
-    findTodosByTag,
-    updateTodoState,
-    getTodos,
-    todoById
-  } = initializeTodoReducer({
-    todos: []
-  });
+export default function main() {
 
   async function starterQuestion(sQ: () => Promise<void> = starterQuestion) {
     const responses = await inquirer.prompt(STARTER_QUESTION);

@@ -3,5 +3,5 @@
 ## Run
 
 ```bash
-npx og-todocli
+npx goodtodos
 ```

@@ -3,7 +3,7 @@ import chalkAnimation from "chalk-animation";
 
 const sleep = (ms: number = 2000) => new Promise(resolve => setTimeout(resolve, ms));
 
-export async function welcome() {
+export default async function welcome() {
   const rainbowTitle = chalkAnimation.rainbow('Welcome to the TODO CLI');
   await sleep();
   console.log(`

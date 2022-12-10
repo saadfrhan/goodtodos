@@ -1,9 +1,11 @@
 import { Todo } from "./types/index.js";
 import * as constants from './constants/index.js';
 
-export default function initializeTodoReducer(args: { todos: Todo[] }) {
+export default function todos() {
 
-  const state = args;
+  const state = {
+    todos: [] as Todo[]
+  };
 
   function todoById(id: string) {
     return state.todos.find(todo => todo.id === id);
@@ -56,3 +58,12 @@ export default function initializeTodoReducer(args: { todos: Todo[] }) {
   }
 
 }
+
+export const {
+  updateTodoState,
+  findTodosByTag,
+  createTodo,
+  deleteTodo,
+  todoById,
+  getTodos
+} = todos()
