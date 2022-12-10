@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import main from './main.js';
 import welcome from './utils/welcome.js';
 
