@@ -1,4 +1,4 @@
-import inquirer, { Answers, QuestionCollection } from "inquirer";
+import inquirer, { QuestionCollection } from "inquirer";
 import { Todo } from "./types/index.js";
 import * as constants from './constants/index.js';
 
