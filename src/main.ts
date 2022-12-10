@@ -48,9 +48,9 @@ export default function main() {
 
     const responses = await inquirer.prompt(LIST_TODOS_QUESTION);
 
-    let optionSelection = responses.view.split(' ')[0]
+    const optionSelection = responses.view.split(' ')[0]
 
-    let response;
+    let response: { todo: string };
 
     switch (optionSelection) {
       case 'List':
